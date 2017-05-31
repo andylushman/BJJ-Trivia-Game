@@ -1,16 +1,24 @@
 //Global Variables
-var initialScreen;
+var trivia = {
+  initialScreen: "",
+  correctCounter: 0,
+  inCorrectCounter: 0,
+
+}
+
+
 
 
 
 //Functions
 
   function startScreen(){
-    initialScreen = "<p class='text-center main-button'><a class='btn btn-primary btn-lg' href='#'>Start Fight</a></p>";
-
-    $(".main-area").html(initialScreen);
+    //Create the start button
+    trivia.initialScreen = "<p class='text-center main-button'><a class='btn btn-primary btn-lg' href='#'>Luta!</a></p>";
+    //Add Start button to main-area
+    $(".main-area").html(trivia.initialScreen);
   }
-  //show the start button
+
 
 
 //Main Process
