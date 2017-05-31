@@ -27,7 +27,11 @@ function startScreen(){
   trivia.initialScreen = "<p class='text-center main-button'><a class='btn btn-primary btn-lg' href='#'>Luta!</a></p>";
   //Add Start button to main-area
   $(".main-area").html(trivia.initialScreen);
-  }
+};
+
+function timer(){
+
+};
 
 function win(){
 
