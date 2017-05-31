@@ -1,4 +1,5 @@
-//Global Variables
+//GLOBAL VARIABLES
+//===========================================
 var trivia = {
   initialScreen: "",
   correctCounter: 0,
@@ -11,14 +12,14 @@ var trivia = {
                 ["option 1", "option 2", "option 3"], ["option 1", "option 2", "option 3"], ["option 1", "option 2", "option 3"], ["option 1", "option 2", "option 3"], ["option 1", "option 2", "option 3"],],
   imageArray: [],
   clock: "",
-
 };
 
 
 
 
 
-//Functions
+//FUNCTIONS
+//===========================================
 
 function startScreen(){
   //Create the start button
@@ -34,5 +35,6 @@ function generateHTML(){
 
 
 
-//Main Process
+//MAIN PROCESS
+//===========================================
 startScreen();
