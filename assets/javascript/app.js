@@ -14,6 +14,7 @@ var trivia = {
   imageArray: [],
   clock: "",
   questionCounter: 0,
+  timeCounter: 10,
 };
 
 
@@ -30,21 +31,44 @@ function startScreen(){
 };
 
 function timer(){
+  trivia.clock = setInterval(tenSeconds, 1000);
+  function tenSeconds(){
+    if(timeCounter === 0){
+      clearInterval(trivia.clock);
+    }
+    if(trivia.timeCounter > 0) {
+      trivia.timeCounter --;
+    }
+    $(".timer").html(trivia.timeCounter);
+  }
+};
 
+function wait(){
+  if(questionCounter < 6) {
+    questionCounter ++;
+    generateHTML();
+    timeCounter = 10;
+    timer();
+  }
+  else {
+    finalScreen();
+  }
 };
 
 function win(){
-
-
+  trivia.correctCounter ++;
+  trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + correctAnswers + "</p>" + "<img class='center-block' src='./assets/images/img.jpg'>";
+  setTimeOut(wait, 3000);
 };
 
 function loss(){
-
+  trivia.inCorrectCounter ++;
+  trivia.gameHTML = "";
 };
 
 function timeOutLoss(){
-
-
+  trivia.unAnsweredCounter ++;
+  trivia.gameHTML = "";
 };
 
 function finalScreen(){
@@ -52,12 +76,16 @@ function finalScreen(){
 };
 
 function resetGame(){
-
-
+  trivia.questionCounter = 0;
+  trivia.correctCounter = 0;
+  trivia.inCorrectCounter = 0;
+  trivia.unAnsweredCounter = 0;
+  trivia.timeCounter = 10;
+  generateHTML();
+  timer();
 };
 
 
-//generateHTML() is triggered by the start button, and generates the HTML
 function generateHTML(){
   trivia.gameHTML = ""
 }
