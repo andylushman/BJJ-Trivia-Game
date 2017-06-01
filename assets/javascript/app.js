@@ -60,7 +60,7 @@ function wait(){
 
 function win(){
   trivia.correctCounter ++;
-  trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + trivia.correctAnswers + "</p>" + "<img class='center-block' src='./assets/images/img.jpg'>";
+  trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + trivia.correctAnswers[trivia.questionCounter] + "</p>" + "<img class='center-block' src='./assets/images/img.jpg'>";
   $(".main-area").html(trivia.gameHTML);
   setTimeout(wait, 3000);
 };
