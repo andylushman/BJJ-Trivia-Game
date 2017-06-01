@@ -63,15 +63,21 @@ function win(){
 
 function loss(){
   trivia.inCorrectCounter ++;
-  trivia.gameHTML = "";
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	$(".mainArea").html(gameHTML);
+	setTimeout(wait, 3000);
 };
 
 function timeOutLoss(){
   trivia.unAnsweredCounter ++;
-  trivia.gameHTML = "";
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + correctAnswers[questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+	$(".mainArea").html(gameHTML);
+	setTimeout(wait, 3000);
 };
 
 function finalScreen(){
+  gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + counter + "</span></p>" + "<p class='text-center'>All done, here's how you did!" + "</p>" + "<p class='summary-correct'>Correct Answers: " + correctTally + "</p>" + "<p>Wrong Answers: " + incorrectTally + "</p>" + "<p>Unanswered: " + unansweredTally + "</p>" + "<p class='text-center reset-button-container'><a class='btn btn-primary btn-lg btn-block reset-button' href='#' role='button'>Reset The Quiz!</a></p>";
+  $(".mainArea").html(gameHTML);
 
 };
 
@@ -87,7 +93,8 @@ function resetGame(){
 
 
 function generateHTML(){
-  trivia.gameHTML = ""
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>30</span></p><p class='text-center'>" + questionArray[questionCounter] + "</p><p class='first-answer answer'>A. " + answerArray[questionCounter][0] + "</p><p class='answer'>B. "+answerArray[questionCounter][1]+"</p><p class='answer'>C. "+answerArray[questionCounter][2]+"</p><p class='answer'>D. "+answerArray[questionCounter][3]+"</p>";
+  $(".main-area").html(trivia.gameHTML);
 }
 
 
