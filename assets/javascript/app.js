@@ -116,18 +116,19 @@ $("body").on("click", ".answer", function(event){
   //If correct answer
   selectedAnswer = $(this).text();
 	if(selectedAnswer === trivia.correctAnswers[trivia.questionCounter]) {
-		//alert("correct");
 
 		clearInterval(trivia.clock);
 		win();
 	}
+  //If incorrect ansewr
 	else {
-		//alert("wrong answer!");
+
 		clearInterval(trivia.clock);
 		loss();
 	}
 }); // Close .answer click
 
+//reset-button click
 $("body").on("click", ".reset-button", function(event){
 	// clickSound.play();
 	resetGame();
