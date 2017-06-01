@@ -21,9 +21,6 @@ var trivia = {
 };
 
 
-
-
-
 //FUNCTIONS
 //===========================================
 function startScreen(){
@@ -95,20 +92,19 @@ function resetGame(){
   timer();
 };
 
-
 function generateHTML(){
   trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + trivia.questionsArray[trivia.questionCounter] + "</p><p class='first-answer answer'>A. " + trivia.answerArray[trivia.questionCounter][0] + "</p><p class='answer'>B. "+trivia.answerArray[trivia.questionCounter][1]+"</p><p class='answer'>C. "+trivia.answerArray[trivia.questionCounter][2]+"</p><p class='answer'>D. "+trivia.answerArray[trivia.questionCounter][3]+"</p>";
   $(".main-area").html(trivia.gameHTML);
 }
 
 
-
 //MAIN PROCESS
 //===========================================
 startScreen();
 
+//start-button click
 $("body").on("click", ".start-button", function(event){
-	event.preventDefault();  // added line to test issue on GitHub Viewer
+	event.preventDefault();
 	// trivia.clickSound.play();
 	generateHTML();
 
@@ -116,9 +112,9 @@ $("body").on("click", ".start-button", function(event){
 }); // Closes start-button click
 
 $("body").on("click", ".answer", function(event){
-	//answeredQuestion = true;
 	// trivia.clickSound.play();
-	selectedAnswer = $(this).text();
+  //If correct answer
+  selectedAnswer = $(this).text();
 	if(selectedAnswer === trivia.correctAnswers[trivia.questionCounter]) {
 		//alert("correct");
 
