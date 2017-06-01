@@ -17,7 +17,7 @@ var trivia = {
               "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>"],
   clock: "",
   questionCounter: 0,
-  timeCounter: 10,
+  timeCounter: 20,
 };
 
 
@@ -28,14 +28,14 @@ var trivia = {
 //===========================================
 function startScreen(){
   //Create the start button
-  trivia.initialScreen = "<p class='text-center main-button'><a class='btn btn-primary btn-lg start-button' href='#'>Luta!</a></p>";
+  trivia.initialScreen = "<p class='text-center main-button'><a class='btn btn-primary btn-lg start-button text-center' href='#'>Luta!</a></p>";
   //Add Start button to main-area
   $(".main-area").html(trivia.initialScreen);
 };
 
 function timer(){
-  trivia.clock = setInterval(tenSeconds, 1000);
-  function tenSeconds(){
+  trivia.clock = setInterval(twentySeconds, 1000);
+  function twentySeconds(){
     if(trivia.timeCounter === 0){
       clearInterval(trivia.clock);
     }
@@ -96,7 +96,7 @@ function resetGame(){
 
 
 function generateHTML(){
-  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>10</span></p><p class='text-center'>" + trivia.questionsArray[trivia.questionCounter] + "</p><p class='first-answer answer'>A. " + trivia.answerArray[trivia.questionCounter][0] + "</p><p class='answer'>B. "+trivia.answerArray[trivia.questionCounter][1]+"</p><p class='answer'>C. "+trivia.answerArray[trivia.questionCounter][2]+"</p><p class='answer'>D. "+trivia.answerArray[trivia.questionCounter][3]+"</p>";
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + trivia.questionsArray[trivia.questionCounter] + "</p><p class='first-answer answer'>A. " + trivia.answerArray[trivia.questionCounter][0] + "</p><p class='answer'>B. "+trivia.answerArray[trivia.questionCounter][1]+"</p><p class='answer'>C. "+trivia.answerArray[trivia.questionCounter][2]+"</p><p class='answer'>D. "+trivia.answerArray[trivia.questionCounter][3]+"</p>";
   $(".main-area").html(trivia.gameHTML);
 }
 

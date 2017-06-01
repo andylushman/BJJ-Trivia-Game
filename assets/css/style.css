@@ -38,6 +38,10 @@
   margin-top: 40px;
 }
 
+.start-button {
+  padding: .25em 7em .25em 7em;
+}
+
 .reset-button {
   margin-top: 40px;
 }
