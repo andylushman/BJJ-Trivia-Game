@@ -46,7 +46,7 @@ function timer(){
 };
 
 function wait(){
-  if(trivia.questionCounter < 6) {
+  if(trivia.questionCounter < 4) {
     trivia.questionCounter ++;
     generateHTML();
     trivia.timeCounter = 10;
