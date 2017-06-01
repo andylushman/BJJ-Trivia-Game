@@ -37,6 +37,7 @@ function timer(){
   trivia.clock = setInterval(twentySeconds, 1000);
   function twentySeconds(){
     if(trivia.timeCounter === 0){
+      timeOutLoss();
       clearInterval(trivia.clock);
     }
     if(trivia.timeCounter > 0) {
@@ -50,7 +51,7 @@ function wait(){
   if(trivia.questionCounter < 4) {
     trivia.questionCounter ++;
     generateHTML();
-    trivia.timeCounter = 10;
+    trivia.timeCounter = 20;
     timer();
   }
   else {
@@ -89,7 +90,7 @@ function resetGame(){
   trivia.correctCounter = 0;
   trivia.inCorrectCounter = 0;
   trivia.unAnsweredCounter = 0;
-  trivia.timeCounter = 10;
+  trivia.timeCounter = 20;
   generateHTML();
   timer();
 };
