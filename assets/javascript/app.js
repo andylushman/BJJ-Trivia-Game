@@ -7,10 +7,12 @@ var trivia = {
   unAnsweredCounter: 0,
   clickSound: new Audio("./assets/sounds/button-click.wav"),
   gameHTML: "",
-  questionsArray: ["Question 1", "questions 2", "Question 3", "question 4", "question 5"],
+  questionsArray: [
+                  "In what year did the first IBJJF World Jiu-Jitsu Championships take place?", "What is the Abu Dhabi Combat Championship?", "In which country did Brazilian Jiu-Jitsu originate?", "Mata Leon refers to:", "In an IBJJF tournment, passing the guard gets you:"],
   answerArray: [
-                ["option 1", "option 2", "option 3", "option 4"], ["option 1", "option 2", "option 3", "option 4"], ["option 1", "option 2", "option 3", "option 4"], ["option 1", "option 2", "option 3", "option 4"], ["option 1", "option 2", "option 3", "option 4"],],
-  correctAnswers: ["option 1", "option 3", "option 1", "option 2", "option 1"],
+                ["1991", "1993", "1996", "1998"], ["An MMA event", "A submission grappling event that happens every year", "A submission grappling event that happens every two years", "A Brazilian Jiu-Jitsu event that only takes place in Abu Dhabi"], ["Canada", "Switzerland", "Thailand", "Japan"], ["A foot tickle", "Rear Naked Choke", "There is a lion on the mat", "Someone is wearing shoes on the mat"], ["2 Points", "3 Points", "An instant win", "Dinner after the fight"],],
+  correctAnswers: [
+                  "C. 1996", "C. A submission grappling event that happens every two years", "D. Japan", "B. Rear Naked Choke", "B. 3 Points"],
   imageArray: [],
   clock: "",
   questionCounter: 0,
@@ -58,7 +60,7 @@ function wait(){
 function win(){
   trivia.correctCounter ++;
   trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + trivia.correctAnswers + "</p>" + "<img class='center-block' src='./assets/images/img.jpg'>";
-  setTimeOut(wait, 3000);
+  setTimeout(wait, 3000);
 };
 
 function loss(){
@@ -105,7 +107,7 @@ startScreen();
 
 $("body").on("click", ".start-button", function(event){
 	event.preventDefault();  // added line to test issue on GitHub Viewer
-	trivia.clickSound.play();
+	// trivia.clickSound.play();
 	generateHTML();
 
 	timer();
@@ -113,18 +115,18 @@ $("body").on("click", ".start-button", function(event){
 
 $("body").on("click", ".answer", function(event){
 	//answeredQuestion = true;
-	trivia.clickSound.play();
+	// trivia.clickSound.play();
 	selectedAnswer = $(this).text();
-	if(selectedAnswer === trivia.correctAnswers[trivai.questionCounter]) {
+	if(selectedAnswer === trivia.correctAnswers[trivia.questionCounter]) {
 		//alert("correct");
 
 		clearInterval(trivia.clock);
-		generateWin();
+		win();
 	}
 	else {
 		//alert("wrong answer!");
 		clearInterval(trivia.clock);
-		generateLoss();
+		loss();
 	}
 }); // Close .answer click
 
