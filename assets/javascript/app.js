@@ -103,7 +103,7 @@ function generateHTML(){
 startScreen();
 
 //start-button click
-$("body").on("click", ".start-button", function(event){
+$("body").on("click touch", ".start-button", function(event){
 	event.preventDefault();
 	trivia.clickSound.play();
 	generateHTML();
@@ -111,7 +111,7 @@ $("body").on("click", ".start-button", function(event){
 	timer();
 }); // Closes start-button click
 
-$("body").on("click", ".answer", function(event){
+$("body").on("click touch", ".answer", function(event){
 	trivia.clickSound.play();
   //If correct answer
   selectedAnswer = $(this).text();
@@ -129,7 +129,7 @@ $("body").on("click", ".answer", function(event){
 }); // Close .answer click
 
 //reset-button click
-$("body").on("click", ".reset-button", function(event){
+$("body").on("click touch", ".reset-button", function(event){
 	trivia.clickSound.play();
 	resetGame();
 }); // Closes reset-button click
