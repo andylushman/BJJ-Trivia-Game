@@ -10,9 +10,9 @@ var trivia = {
   questionsArray: [
                   "In what year did the first IBJJF World Jiu-Jitsu Championships take place?", "What is the Abu Dhabi Combat Championship?", "In which country did Brazilian Jiu-Jitsu originate?", "Mata Leon refers to:", "In an IBJJF tournment, passing the guard gets you:"],
   answerArray: [
-                ["1991", "1993", "1996", "1998"], ["An MMA event", "A submission grappling event that happens every year", "A submission grappling event that happens every two years", "A Brazilian Jiu-Jitsu event that only takes place in Abu Dhabi"], ["Canada", "Switzerland", "Thailand", "Japan"], ["A foot tickle", "Rear Naked Choke", "There is a lion on the mat", "Someone is wearing shoes on the mat"], ["2 Points", "3 Points", "An instant win", "Dinner after the fight"],],
+                ["1991", "1993", "1996", "1998"], ["A MMA event", "An annual submission grappling event", "A biennial submission grappling event", "A BJJ event hosted only in Abu Dhabi"], ["Canada", "Switzerland", "Thailand", "Japan"], ["A foot tickle", "Rear Naked Choke", "There is a lion on the mat", "Wearing shoes on the mat"], ["2 Points", "3 Points", "An instant win", "Dinner after the fight"],],
   correctAnswers: [
-                  "C. 1996", "C. A submission grappling event that happens every two years", "D. Japan", "B. Rear Naked Choke", "B. 3 Points"],
+                  "C. 1996", "C. A biennial submission grappling event", "D. Japan", "B. Rear Naked Choke", "B. 3 Points"],
   imageArray: [
               "<img class='center-block img-right' src='assets/images/ibjjf-1996.png'>", "<img class='center-block img-right' src='assets/images/adcc.png'>", "<img class='center-block img-right' src='assets/images/japan.jpg'>", "<img class='center-block img-right' src='assets/images/mata-leon.jpg'>", "<img class='center-block img-right' src='assets/images/passing-guard.jpeg'>"],
   clock: "",
