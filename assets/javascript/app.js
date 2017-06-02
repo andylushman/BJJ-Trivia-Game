@@ -14,7 +14,7 @@ var trivia = {
   correctAnswers: [
                   "C. 1996", "C. A submission grappling event that happens every two years", "D. Japan", "B. Rear Naked Choke", "B. 3 Points"],
   imageArray: [
-              "<img class='center-block img-right' src='assets/images/ibjjf-1996.jpg'>", "<img class='center-block img-right' src='assets/images/adcc.jpg'>", "<img class='center-block img-right' src='assets/images/japan.jpg'>", "<img class='center-block img-right' src='assets/images/mata-leon.jpg'>", "<img class='center-block img-right' src='assets/images/passing-guard.jpg'>"],
+              "<img class='center-block img-right' src='assets/images/ibjjf-1996.png'>", "<img class='center-block img-right' src='assets/images/adcc.png'>", "<img class='center-block img-right' src='assets/images/japan.jpg'>", "<img class='center-block img-right' src='assets/images/mata-leon.jpg'>", "<img class='center-block img-right' src='assets/images/passing-guard.jpeg'>"],
   clock: "",
   questionCounter: 0,
   timeCounter: 20,
@@ -60,21 +60,21 @@ function win(){
   trivia.correctCounter ++;
   trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + trivia.correctAnswers[trivia.questionCounter] + "</p>" + trivia.imageArray[trivia.questionCounter];
   $(".main-area").html(trivia.gameHTML);
-  setTimeout(wait, 3000);
+  setTimeout(wait, 4000);
 };
 
 function loss(){
   trivia.inCorrectCounter ++;
   trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ trivia.correctAnswers[trivia.questionCounter] + "</p>" + trivia.imageArray[trivia.questionCounter];
 	$(".main-area").html(trivia.gameHTML);
-	setTimeout(wait, 3000);
+	setTimeout(wait, 4000);
 };
 
 function timeOutLoss(){
   trivia.unAnsweredCounter ++;
-  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + trivia.correctAnswers[trivia.questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>You ran out of time!  The correct answer was: " + trivia.correctAnswers[trivia.questionCounter] + "</p>" + trivia.imageArray[trivia.questionCounter];
 	$(".main-area").html(trivia.gameHTML);
-	setTimeout(wait, 3000);
+	setTimeout(wait, 4000);
 };
 
 function finalScreen(){

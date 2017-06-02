@@ -48,10 +48,22 @@ body {
 
 .start-button {
   padding: .25em 7em .25em 7em;
+  background-color: #9B0B00;
+  border: none;
+}
+
+.start-button:hover {
+  background-color: #FF1200;
 }
 
 .reset-button {
-  margin-top: 40px;
+  padding: .25em 7em .25em 7em;
+  background-color: #9B0B00;
+  border: none;
+}
+
+.reset-button:hover {
+  background-color: #FF1200;
 }
 
 .summary-correct {
