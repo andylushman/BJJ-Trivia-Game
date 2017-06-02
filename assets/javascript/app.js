@@ -5,7 +5,7 @@ var trivia = {
   correctCounter: 0,
   inCorrectCounter: 0,
   unAnsweredCounter: 0,
-  clickSound: new Audio("assets/sounds/button-click.wav"),
+  clickSound: new Audio("assets/sounds/button-click.mp3"),
   gameHTML: "",
   questionsArray: [
                   "In what year did the first IBJJF World Jiu-Jitsu Championships take place?", "What is the Abu Dhabi Combat Championship?", "In which country did Brazilian Jiu-Jitsu originate?", "Mata Leon refers to:", "In an IBJJF tournment, passing the guard gets you:"],
@@ -130,6 +130,6 @@ $("body").on("click", ".answer", function(event){
 
 //reset-button click
 $("body").on("click", ".reset-button", function(event){
-	// trivia.clickSound.play();
+	trivia.clickSound.play();
 	resetGame();
 }); // Closes reset-button click
