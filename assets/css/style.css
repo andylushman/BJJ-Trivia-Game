@@ -1,4 +1,10 @@
-
+body {
+    background-image: url("../images/bjj-background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: #777;
+}
 
 .jumbotron {
   box-sizing: border-box;
@@ -48,9 +54,4 @@
 
 .summary-correct {
   margin-top: 40px;
-}
-
-body {
-  background-color: #DD0506;
-  color: white;
 }

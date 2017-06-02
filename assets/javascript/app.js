@@ -5,7 +5,7 @@ var trivia = {
   correctCounter: 0,
   inCorrectCounter: 0,
   unAnsweredCounter: 0,
-  clickSound: new Audio("./assets/sounds/button-click.wav"),
+  clickSound: new Audio("../sounds/button-click.wav"),
   gameHTML: "",
   questionsArray: [
                   "In what year did the first IBJJF World Jiu-Jitsu Championships take place?", "What is the Abu Dhabi Combat Championship?", "In which country did Brazilian Jiu-Jitsu originate?", "Mata Leon refers to:", "In an IBJJF tournment, passing the guard gets you:"],
@@ -14,7 +14,7 @@ var trivia = {
   correctAnswers: [
                   "C. 1996", "C. A submission grappling event that happens every two years", "D. Japan", "B. Rear Naked Choke", "B. 3 Points"],
   imageArray: [
-              "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>"],
+              "<img class='center-block img-right' src='../images/ibjjf-1996.jpg'>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>"],
   clock: "",
   questionCounter: 0,
   timeCounter: 20,
@@ -58,14 +58,14 @@ function wait(){
 
 function win(){
   trivia.correctCounter ++;
-  trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + trivia.correctAnswers[trivia.questionCounter] + "</p>" + "<img class='center-block' src='./assets/images/img.jpg'>";
+  trivia.gameHTML = "<p class='text-center'> Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Correct! The answer is: " + trivia.correctAnswers[trivia.questionCounter] + "</p>" + trivia.imageArray[trivia.questionCounter];
   $(".main-area").html(trivia.gameHTML);
   setTimeout(wait, 3000);
 };
 
 function loss(){
   trivia.inCorrectCounter ++;
-  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ trivia.correctAnswers[trivia.questionCounter] + "</p>" + "<img class='center-block img-wrong' src='img/x.png'>";
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>" + trivia.timeCounter + "</span></p>" + "<p class='text-center'>Wrong! The correct answer is: "+ trivia.correctAnswers[trivia.questionCounter] + "</p>" + trivia.imageArray[trivia.questionCounter];
 	$(".main-area").html(trivia.gameHTML);
 	setTimeout(wait, 3000);
 };
@@ -105,7 +105,7 @@ startScreen();
 //start-button click
 $("body").on("click", ".start-button", function(event){
 	event.preventDefault();
-	// trivia.clickSound.play();
+	trivia.clickSound.play();
 	generateHTML();
 
 	timer();
@@ -130,6 +130,6 @@ $("body").on("click", ".answer", function(event){
 
 //reset-button click
 $("body").on("click", ".reset-button", function(event){
-	// clickSound.play();
+	// trivia.clickSound.play();
 	resetGame();
 }); // Closes reset-button click
