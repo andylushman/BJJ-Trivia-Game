@@ -5,7 +5,7 @@ var trivia = {
   correctCounter: 0,
   inCorrectCounter: 0,
   unAnsweredCounter: 0,
-  clickSound: new Audio("../sounds/button-click.wav"),
+  clickSound: new Audio("assets/sounds/button-click.wav"),
   gameHTML: "",
   questionsArray: [
                   "In what year did the first IBJJF World Jiu-Jitsu Championships take place?", "What is the Abu Dhabi Combat Championship?", "In which country did Brazilian Jiu-Jitsu originate?", "Mata Leon refers to:", "In an IBJJF tournment, passing the guard gets you:"],
@@ -14,7 +14,7 @@ var trivia = {
   correctAnswers: [
                   "C. 1996", "C. A submission grappling event that happens every two years", "D. Japan", "B. Rear Naked Choke", "B. 3 Points"],
   imageArray: [
-              "<img class='center-block img-right' src='../images/ibjjf-1996.jpg'>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>", "<img class='center-block img-right' src=''>"],
+              "<img class='center-block img-right' src='assets/images/ibjjf-1996.jpg'>", "<img class='center-block img-right' src='assets/images/adcc.jpg'>", "<img class='center-block img-right' src='assets/images/japan.jpg'>", "<img class='center-block img-right' src='assets/images/mata-leon.jpg'>", "<img class='center-block img-right' src='assets/images/passing-guard.jpg'>"],
   clock: "",
   questionCounter: 0,
   timeCounter: 20,
@@ -112,7 +112,7 @@ $("body").on("click", ".start-button", function(event){
 }); // Closes start-button click
 
 $("body").on("click", ".answer", function(event){
-	// trivia.clickSound.play();
+	trivia.clickSound.play();
   //If correct answer
   selectedAnswer = $(this).text();
 	if(selectedAnswer === trivia.correctAnswers[trivia.questionCounter]) {
