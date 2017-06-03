@@ -93,7 +93,7 @@ function resetGame(){
 };
 
 function generateHTML(){
-  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + trivia.questionsArray[trivia.questionCounter] + "</p><p class='first-answer answer'>A. " + trivia.answerArray[trivia.questionCounter][0] + "</p><p class='answer'>B. "+trivia.answerArray[trivia.questionCounter][1]+"</p><p class='answer'>C. "+trivia.answerArray[trivia.questionCounter][2]+"</p><p class='answer'>D. "+trivia.answerArray[trivia.questionCounter][3]+"</p>";
+  trivia.gameHTML = "<p class='text-center timer-p'>Time Remaining: <span class='timer'>20</span></p><p class='text-center'>" + trivia.questionsArray[trivia.questionCounter] + "</p><button class='first-answer answer'>A. " + trivia.answerArray[trivia.questionCounter][0] + "</button><br><button class='answer'>B. "+trivia.answerArray[trivia.questionCounter][1]+"</button><br><button class='answer'>C. "+trivia.answerArray[trivia.questionCounter][2]+"</button><br><button class='answer'>D. "+trivia.answerArray[trivia.questionCounter][3]+"</button>";
   $(".main-area").html(trivia.gameHTML);
 }
 
