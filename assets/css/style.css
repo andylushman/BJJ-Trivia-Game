@@ -39,6 +39,10 @@ body {
   margin-bottom: 5px;
 }
 
+.answer:focus{
+  background-color: none;
+}
+
 .img-right {
   margin-top: 40px;
   height: 25em;
